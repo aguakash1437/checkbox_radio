@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+</head>
+<body>
+    <center>
+        <h1>insert student data</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label for="cname">cname</label>
+            <select name="cname" id="cname">
+                {% for to in students %}
+                    <option value="{{to}}">{{to.cname}}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <label for="sno">sno</label>
+            <input type="number" name="sno" id="sno"><br>
+            <br>
+            <label for="sname">sname</label>
+            <input type="sname" name="sname" id="sname"><br>
+            <br>
+            <input type="submit" >
+        </form>
+    </center>
+</body>
+</html>
